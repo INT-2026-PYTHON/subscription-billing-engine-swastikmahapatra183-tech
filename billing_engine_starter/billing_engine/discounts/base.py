@@ -32,3 +32,8 @@ class Discount(ABC):
     def apply(self, subtotal: Money, context: DiscountContext) -> Money:
         """Return the non-negative discount amount, capped at subtotal."""
         raise NotImplementedError
+discount_amount = PercentageDiscount(Decimal("0.20")).apply(
+    Money(1000, "INR"),
+    context,
+)
+# -> Money(200, "INR")
