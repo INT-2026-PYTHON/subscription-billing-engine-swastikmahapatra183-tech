@@ -23,3 +23,8 @@ class PricingStrategy(ABC):
     def calculate(self, quantity: int) -> Money:
         """Return the charge for the given usage quantity."""
         raise NotImplementedError
+
+class PricingStrategy(ABC):
+    @abstractmethod
+    def calculate(self, quantity: int) -> Money:
+        raise NotImplementedError
