@@ -18,3 +18,16 @@ class UsageBased(PricingStrategy):
     def calculate(self, quantity: int) -> Money:
         # TODO Day 1
         raise NotImplementedError("Day 1: implement UsageBased.calculate")
+
+from billing_engine.money import Money
+from billing_engine.pricing.base import PricingStrategy
+
+
+class UsageBased(PricingStrategy):
+    """Charges `unit_price * quantity`."""
+
+    def __init__(self, unit_price: Money) -> None:
+        self.unit_price = unit_price
+
+    def calculate(self, quantity: int) -> Money:
+        return self.unit_price * quantity
