@@ -6,6 +6,7 @@ Examples:
     PercentageDiscount(Decimal("1.00")).apply(Money(500, "INR"), ctx)   ->  Money(500, "INR")  # 100% off
 """
 
+
 from decimal import Decimal
 
 from billing_engine.money import Money
